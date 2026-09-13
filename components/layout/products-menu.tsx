@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import type { ComponentType, MouseEvent, SVGProps } from "react";
+import type { ComponentType, FocusEvent, SVGProps } from "react";
 import {
   CalculatorIcon,
   CalendarIcon,
@@ -73,7 +73,7 @@ export function ProductsMenu() {
     closeTimer.current = setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
   };
 
-  const handleBlur = (event: MouseEvent<HTMLDivElement>) => {
+  const handleBlur = (event: FocusEvent<HTMLDivElement>) => {
     if (!containerRef.current?.contains(event.relatedTarget as Node)) {
       cancelClose();
       setOpen(false);
